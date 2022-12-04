@@ -8,6 +8,7 @@ import { MobileLinksWrapper, NavBarLink, NavbarLinksWrapper, NavbarWrapper } fro
 import logo from "../../assests/ToorWeldingLogo-removebg.png";
 import { navbarConfig } from "./navbar-config";
 import Link from "next/link";
+import { SxProps, Theme } from '@mui/system';
 
 export const Navbar: FC = () =>{
     return(
@@ -20,12 +21,18 @@ export const Navbar: FC = () =>{
     )
 }
 
-export const MapNavLinks: FC = () =>(
+export interface MapNavLinksProps{
+    styles?: SxProps<Theme>
+}
+
+export const MapNavLinks: FC<MapNavLinksProps> = ({
+    styles = {}
+}) =>(
     <>
         {
             navbarConfig.map(
                 ({name, route}, index) => (
-                    <NavBarLink  href={route} key={[name, index].join("-")}>{name.toUpperCase()}</NavBarLink>
+                    <NavBarLink  href={route} key={[name, index].join("-")} sx={styles}>{name.toUpperCase()}</NavBarLink>
                 )
             )
         }

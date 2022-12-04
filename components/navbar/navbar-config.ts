@@ -1,4 +1,8 @@
-export const navbarConfig: { name: string; route: string }[] = [
+export interface NavbarConfig{
+    name: string; 
+    route: string
+}
+export const navbarConfig: NavbarConfig[] = [
     {
         name: "Services",
         route: "/services",

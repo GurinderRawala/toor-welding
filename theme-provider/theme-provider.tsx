@@ -1,21 +1,21 @@
 
-import { createTheme, GlobalStyles, ThemeProvider } from "@mui/material";
+import { createTheme, GlobalStyles, GlobalStylesProps, ThemeProvider } from "@mui/material";
 import React, { FC } from "react";
 
 const theme = createTheme({
     typography: {
-        fontFamily: "Nunito, Roboto, Arial",
+        fontFamily: "'PT Sans Caption', 'sans-serif'",
     },
     palette: {
         background: {
-            default: "#f5f5f5",
+            default: "#fff5e6",
             paper: "#fff"
         },
         primary: {
-            main: "#87CEFA"
+            main: "#AF524B"
         },
         secondary: {
-            main: "#2E8B57"
+            main: "#333"
         },
         text:{
             disabled: "#777",
@@ -29,18 +29,20 @@ export interface AppThemeProviderProps{
     children: JSX.Element
 }
 
+const globalStyles: GlobalStylesProps["styles"] = {
+    html: {
+        fontFamily: "'PT Sans Caption', 'sans-serif'"
+    },
+    body: {
+        boxSizing: "border-box",
+        margin: 0,
+        padding: 0
+    }
+}
+
 export const AppThemeProvider: FC<AppThemeProviderProps> = ({ children }) => (
     <ThemeProvider theme={theme}>
-        <GlobalStyles styles={{
-            html: {
-                fontFamily: "Nunito, Roboto, Arial",
-            },
-            body: {
-                boxSizing: "border-box",
-                margin: 0,
-                padding: 0
-            }
-        }} />
+        <GlobalStyles styles={globalStyles} />
         { children }
     </ThemeProvider>
 )
