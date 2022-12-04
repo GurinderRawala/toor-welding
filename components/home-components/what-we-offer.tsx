@@ -32,9 +32,9 @@ export const MapTopServicesGrid: FC = () =>(
 export const WhatWeOfferStyled = styled(ColumnWrapper)(
     ({theme}) =>(
         {
-            gap: 30,
+            justifyContent: "space-evenly",
             padding: theme.spacing(2),
-            minHeight: 500,
+            minHeight: 700,
             '& > .__servicesGrid': {
                 display: "grid",
                 gridTemplateColumns: "25% 25% 25% 25%",

@@ -15,3 +15,15 @@ export const ColumnWrapper = styled(Box)({
     justifyContent: 'center',
     alignItems: 'center',
 });
+
+export const ResponsiveContainer = styled(Box)(
+    ({theme}) => (
+        {
+            width: "80%",
+            margin: "0 auto",
+            [theme.breakpoints.down("md")]:{
+                width: "100%"
+            }
+        }
+    )
+)
