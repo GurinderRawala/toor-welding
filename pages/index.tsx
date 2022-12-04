@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { StatmentSection, WhatWeOffer, WhyChooseUs } from '../components/home-components';
+import { CustomerFeedback, StatmentSection, WhatWeOffer, WhyChooseUs } from '../components/home-components';
 
 const Home: NextPage = () => {
     return (
@@ -16,6 +16,7 @@ const Home: NextPage = () => {
             <StatmentSection />
             <WhatWeOffer />
             <WhyChooseUs />
+            <CustomerFeedback />
        
         </>
     );

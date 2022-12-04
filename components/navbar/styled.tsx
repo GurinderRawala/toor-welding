@@ -14,6 +14,7 @@ export const NavbarWrapper = styled(Box)(
         position: 'sticky',
         top: 0,
         left: 0,
+        zIndex: 3
     }))
 
 export const NavbarLinksWrapper = styled(Box)(

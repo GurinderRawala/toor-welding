@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/system";
+import { CSSProperties } from "react";
 
 
 export const RowWrapper = styled(Box)({
@@ -27,3 +28,11 @@ export const ResponsiveContainer = styled(Box)(
         }
     )
 )
+
+export const smallScreenFlex: CSSProperties = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    gap: 10,
+    alignItems: 'center'
+}

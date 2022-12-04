@@ -21,7 +21,7 @@ const theme = createTheme({
             disabled: "#777",
             primary: "#333",
             secondary: "#FFF"
-        }
+        },
     },
 });
 
