@@ -36,7 +36,7 @@ export const MapNavLinks: FC<MapNavLinksProps> = ({
                 )
             )
         }
-        <Button variant="contained" size="small">Get a Quote</Button>
+        <Button variant="contained" size="small" href="/get-quote">Get a Quote</Button>
     </>
 )
 

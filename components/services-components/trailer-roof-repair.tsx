@@ -12,7 +12,7 @@ export const TrailerRoofRepair: FC = () =>(
             <ResponsiveImage src={trailerRoofRepairConfig.image}/>
         </ColumnWrapper>
 
-        <WeldingContentStyled>
+        <WeldingContentStyled data-aos="fade-up">
             <Typography variant="h2">{trailerRoofRepairConfig.title}</Typography>
             <Typography>{trailerRoofRepairConfig.body}</Typography>
             <OtherMaterialsStyled>

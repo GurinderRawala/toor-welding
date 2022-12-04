@@ -6,10 +6,10 @@ import { ColumnWrapper } from "../common-styled";
 
 export const StatmentSection: FC = () =>(
     <StatmentSectionStyled>
-        <ColumnWrapper>
+        <ColumnWrapper data-aos="fade-up">
             <ResponsiveImage src={statetmentConfig.imgUrl} />
         </ColumnWrapper>
-        <Box className="__detailBox">
+        <Box className="__detailBox" data-aos="fade-up">
             <Typography variant="h2">{statetmentConfig.title}</Typography>
             <Typography className="__punchLine">{statetmentConfig.punchLine}</Typography>
             <Typography mt={1}>{statetmentConfig.body.partOne}</Typography>

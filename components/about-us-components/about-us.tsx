@@ -8,7 +8,7 @@ import { WeldingWrapperStyled as AboutUsWrapperStyled } from "../services-compon
 export const AboutUsComponent: FC = () =>(
     <ResponsiveContainer>
         <AboutUsWrapperStyled sx={{ gridTemplateColumns: "auto 30%", minHeight: 0 }}>
-            <ColumnWrapper sx={{justifyContent: "flex-start"}}>
+            <ColumnWrapper sx={{justifyContent: "flex-start"}} data-aos="fade-up">
                 <Typography>{aboutUsComponentConfig.intro}</Typography>
                 <Typography>{aboutUsComponentConfig.introPart}</Typography>
             </ColumnWrapper>
@@ -20,7 +20,7 @@ export const AboutUsComponent: FC = () =>(
             <Typography variant="h2">{aboutUsComponentConfig.sectionOne.heading}</Typography>
             <Typography>{aboutUsComponentConfig.sectionOne.body}</Typography>
         </ColumnWrapper>
-        <ColumnWrapper sx={{gap: 10}} p={2}>
+        <ColumnWrapper sx={{gap: 10}} p={2} data-aos="fade-up">
             <Typography variant="h2">{aboutUsComponentConfig.sectionTwo.heading}</Typography>
             <Typography>{aboutUsComponentConfig.sectionTwo.body}</Typography>
         </ColumnWrapper>

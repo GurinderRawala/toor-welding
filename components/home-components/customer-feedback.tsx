@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import { RowWrapper } from "../common-styled";
 
 export const CustomerFeedback: FC = () =>(
-    <CustomerFeedbackStyled>
+    <CustomerFeedbackStyled data-aos="fade-up">
         <MapToCustomerFeedback />
     </CustomerFeedbackStyled>
 )

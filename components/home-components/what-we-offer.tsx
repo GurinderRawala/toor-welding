@@ -5,7 +5,7 @@ import { ColumnWrapper } from "../common-styled";
 import { ResponsiveImage } from "../responsive-image";
 
 export const WhatWeOffer: FC = () =>(
-    <WhatWeOfferStyled>
+    <WhatWeOfferStyled data-aos="fade-up">
         <Typography variant="h2">{whatWeOfferConfig.title}</Typography>
         <Box className="__servicesGrid">
             <MapTopServicesGrid />

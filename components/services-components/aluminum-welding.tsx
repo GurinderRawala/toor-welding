@@ -8,7 +8,7 @@ import { CustomList } from "../custom-list";
 
 export const AluminumWelding: FC = () =>(
     <WeldingWrapperStyled>
-        <Card>
+        <Card data-aos="fade-up">
             <CardHeader 
                 avatar={
                     <Image src={logo} alt="logo" height={100}/>
@@ -31,7 +31,7 @@ export const AluminumWelding: FC = () =>(
                 </CardFooterStyled>
             </CardActions>
         </Card>
-        <WeldingContentStyled>
+        <WeldingContentStyled data-aos="fade-up">
             <Typography variant="h2">{aluminumWeldingContentConfig.title}</Typography>
             <Typography>{aluminumWeldingContentConfig.body.partOne}</Typography>
             <Typography>{aluminumWeldingContentConfig.body.partTwo}</Typography>

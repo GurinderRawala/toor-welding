@@ -3,7 +3,7 @@ import React, { FC } from "react";
 import { ColumnWrapper, ResponsiveContainer } from "../common-styled";
 
 export const WhyChooseUs: FC = () =>(
-    <WhyChooseUsStyled>
+    <WhyChooseUsStyled data-aos="fade-up">
         <Typography variant="h2">{whyChooseUsConfig.title}</Typography>
         <ResponsiveContainer>{whyChooseUsConfig.body}</ResponsiveContainer>
     </WhyChooseUsStyled>
