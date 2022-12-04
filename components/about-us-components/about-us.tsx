@@ -4,6 +4,7 @@ import logo from "../../assests/ToorWeldingLogo-removebg.png";
 import Image from "next/image";
 import { ColumnWrapper, ResponsiveContainer } from "../common-styled";
 import { WeldingWrapperStyled as AboutUsWrapperStyled } from "../services-components";
+import { LOGO } from "../../constents";
 
 export const AboutUsComponent: FC = () =>(
     <ResponsiveContainer>
@@ -13,7 +14,8 @@ export const AboutUsComponent: FC = () =>(
                 <Typography>{aboutUsComponentConfig.introPart}</Typography>
             </ColumnWrapper>
             <ColumnWrapper sx={{justifyContent: "flex-start"}}>
-                <Image src={logo} alt="logo" height={150}/>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={LOGO} alt="logo" height={150}/>
             </ColumnWrapper>
         </AboutUsWrapperStyled>
         <ColumnWrapper sx={{gap: 10}} mb={10} p={2}>

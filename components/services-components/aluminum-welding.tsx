@@ -1,17 +1,17 @@
 import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, List, ListItem, ListItemText, styled, Typography } from "@mui/material";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import React, { FC } from "react";
-import logo from "../../assests/ToorWeldingLogo-removebg.png";
-import Image from "next/image";
 import { ColumnWrapper, RowWrapper, smallScreenFlex } from "../common-styled";
 import { CustomList } from "../custom-list";
+import { LOGO } from "../../constents";
 
 export const AluminumWelding: FC = () =>(
     <WeldingWrapperStyled>
         <Card data-aos="fade-up">
             <CardHeader 
                 avatar={
-                    <Image src={logo} alt="logo" height={100}/>
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={LOGO} alt="logo" height={100}/>
                 }
                 title={<Typography variant="h4">{serviceCardConfig.title}</Typography>}
             />

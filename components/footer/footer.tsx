@@ -6,12 +6,14 @@ import { Box, Typography } from "@mui/material";
 import { footerConfig } from "./footer-config";
 import { MapNavLinks } from "../navbar";
 import { Theme } from "@mui/system";
+import { LOGO } from "../../constents";
 
 export const Footer: FC = () =>(
     <>
         <FooterWrapper>
             <InnerWrapper>
-                <Image src={logo} alt="footer-logo" height={200}/>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={LOGO} alt="footer-logo" height={200}/>
             </InnerWrapper>
             <AddressCard />
             <LinksCard />

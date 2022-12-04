@@ -9,12 +9,14 @@ import logo from "../../assests/ToorWeldingLogo-removebg.png";
 import { navbarConfig } from "./navbar-config";
 import Link from "next/link";
 import { SxProps, Theme } from '@mui/system';
+import { LOGO } from '../../constents';
 
 export const Navbar: FC = () =>{
     return(
         <NavbarWrapper>
             <Link href="/">
-                <Image src={logo} alt="toor-welding-logo" height="100"/>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={LOGO} alt="toor-welding-logo" height="100"/>
             </Link>
             <NavbarLinks />
         </NavbarWrapper>
@@ -36,7 +38,7 @@ export const MapNavLinks: FC<MapNavLinksProps> = ({
                 )
             )
         }
-        <Button variant="contained" size="small" href="/get-quote">Get a Quote</Button>
+        <Button variant="contained" size="small" href="/get-quote.html">Get a Quote</Button>
     </>
 )
 

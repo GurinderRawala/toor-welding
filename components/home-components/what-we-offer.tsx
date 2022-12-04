@@ -19,7 +19,7 @@ export const MapTopServicesGrid: FC = () =>(
             whatWeOfferConfig.servicesGrid.map(
                 ({url, title, message}, index) =>(
                     <ColumnWrapper key={[url,index].join("-")} sx={{ justifyContent: "flex-start", gap: 5, minHeight: 350}}>
-                        <ResponsiveImage  src={url} customStyles={{ height: "30%" }}/>
+                        <ResponsiveImage  src={url} customStyles={{ height: 200 }}/>
                         <Typography variant="h4">{title}</Typography>
                         <Typography>{message}</Typography>
                     </ColumnWrapper>
