@@ -22,7 +22,7 @@ export const Footer: FC = () =>(
 
 
 export const AddressCard: FC = () =>(
-    <InnerWrapper sx={{gap: 6}}>
+    <InnerWrapper sx={{gap: 3}}>
         <Typography fontSize={20} fontWeight={600}>{footerConfig.title}</Typography>
         <Box>
             <Typography>{footerConfig.address.street}</Typography>

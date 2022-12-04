@@ -9,7 +9,7 @@ export type FooterConfig = {
 }
 
 export const footerConfig: FooterConfig = {
-    title: "Toor Welding",
+    title: "Toor Welding Inc.",
     address: {
         street: "90 Blue Spruce Street",
         city: "Brampton",

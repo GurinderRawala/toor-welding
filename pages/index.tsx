@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { StatmentSection, WhatWeOffer } from '../components/home-components';
 
 const Home: NextPage = () => {
     return (
@@ -11,6 +12,9 @@ const Home: NextPage = () => {
                     content="Toor Welding provides best welding service in GTA and Brampton"
                 />
             </Head>
+
+            <StatmentSection />
+            <WhatWeOffer />
        
         </>
     );

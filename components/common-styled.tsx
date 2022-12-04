@@ -7,4 +7,11 @@ export const RowWrapper = styled(Box)({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     gap: 5
-})
+});
+
+export const ColumnWrapper = styled(Box)({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+});

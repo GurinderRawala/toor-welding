@@ -9,7 +9,8 @@ export const FooterWrapper = styled(Box)(
         [theme.breakpoints.down("md")]:{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-start",
+            gap: 10,
             alignItems: "center"
         }
     })
@@ -21,7 +22,7 @@ export const InnerWrapper = styled(Box)(
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: 300
+        minHeight: 200
     }
 )
 
