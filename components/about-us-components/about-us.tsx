@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ColumnWrapper, ResponsiveContainer } from "../common-styled";
 import { WeldingWrapperStyled as AboutUsWrapperStyled } from "../services-components";
 import { LOGO } from "../../constents";
+import { PhotoViewer } from "../photo-gallery";
 
 export const AboutUsComponent: FC = () =>(
     <ResponsiveContainer>
@@ -18,6 +19,8 @@ export const AboutUsComponent: FC = () =>(
                 <img src={LOGO} alt="logo" height={150}/>
             </ColumnWrapper>
         </AboutUsWrapperStyled>
+        <Typography variant="h2" py={2} textAlign="center">{aboutUsComponentConfig.jobs}</Typography>
+        <PhotoViewer />
         <ColumnWrapper sx={{gap: 10}} mb={10} p={2}>
             <Typography variant="h2">{aboutUsComponentConfig.sectionOne.heading}</Typography>
             <Typography>{aboutUsComponentConfig.sectionOne.body}</Typography>
@@ -44,5 +47,6 @@ export const aboutUsComponentConfig = {
         heading: `The Toor Welding Inc. Difference`,
         body: ` Being a full-service company, we handle a wide range of welding and fabrication projects for residential, commercial and industrial clients. To prevent any hassles, we deliver efficient on-site repairs with a fast response time.
          We value our customers and strive to go beyond their expectations with quality services.`
-    }
+    },
+    jobs: `Work Diaries`
 }
