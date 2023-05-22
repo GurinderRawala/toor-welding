@@ -4,17 +4,17 @@ import Link from "next/link";
 
 
 export const NavbarWrapper = styled(Box)(
-    ({theme}) => ({
+    ({theme, theme:{palette: {mode}}}) => ({
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: `0 ${theme.spacing(1)}`,
+        padding: `0 ${theme.spacing(2)}`,
         height: 100,
-        backgroundImage: `linear-gradient(to right, ${theme.palette.background.paper}, ${theme.palette.secondary.main})`,
+        backgroundColor: theme.palette.grey[mode === "light" ? 200 : 900],
         position: 'sticky',
         top: 0,
         left: 0,
-        zIndex: 3
+        zIndex: 3,
     }))
 
 export const NavbarLinksWrapper = styled(Box)(
@@ -24,7 +24,6 @@ export const NavbarLinksWrapper = styled(Box)(
         justifyContent: 'flex-end',
         alignItems: 'center',
         gap: theme.spacing(3),
-        color: theme.palette.background.paper,
         [theme.breakpoints.down('md')]: {
             flexDirection: 'column',
             justifyContent: 'flex-start',
@@ -38,7 +37,7 @@ export const NavBarLink = styled(Link)(
     ({theme}) =>({
         position: 'relative',
         textDecoration: 'none',
-        color: theme.palette.background.default,
+        color: theme.palette.text.primary,
         fontSize: 14,
         fontWeight: 500,
         padding: theme.spacing(1),
@@ -58,11 +57,11 @@ export const NavBarLink = styled(Link)(
 )
 
 export const MobileLinksWrapper = styled(Box)(
-    ({theme}) =>({
+    ({theme, theme: {palette:{mode}}}) =>({
         position: 'absolute',
         top: 100,
         left: 0,
         width: '100%',
-        backgroundImage: `linear-gradient(to right, ${theme.palette.background.paper}, ${theme.palette.secondary.main})`,
+        backgroundColor: theme.palette.grey[mode === "light" ? 200 : 900],
         padding: `${theme.spacing(2)} 0`
     }))

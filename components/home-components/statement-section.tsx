@@ -24,7 +24,7 @@ export const StatmentSectionStyled = styled(Box)(
             display: "grid",
             gridTemplateColumns: "45% 1fr",
             gap: 20,
-            backgroundColor: theme.palette.background.default,
+            color: theme.palette.text.primary,
             padding: theme.spacing(2),
             '& > .__detailBox': {
                 display: "flex",

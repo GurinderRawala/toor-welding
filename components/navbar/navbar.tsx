@@ -1,22 +1,25 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { Button, useMediaQuery, useTheme } from "@mui/material";
-import Image from "next/image";
+import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
 import React, { FC, useState } from "react";
 
 import { MobileLinksWrapper, NavBarLink, NavbarLinksWrapper, NavbarWrapper } from "./styled";
-import logo from "../../assests/ToorWeldingLogo-removebg.png";
 import { navbarConfig } from "./navbar-config";
 import Link from "next/link";
 import { SxProps, Theme } from '@mui/system';
-import { LOGO } from '../../constents';
+import { ThemeSwitch } from '../theme-switch';
+import { LogoIcon } from '../logo-icon';
 
 export const Navbar: FC = () =>{
+    const { palette: { mode } } = useTheme()
     return(
         <NavbarWrapper>
             <Link href="/">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={LOGO} alt="toor-welding-logo" height="100"/>
+                <LogoIcon 
+                    viewBox="0 0 510.000000 489.000000" 
+                    sx={{ height: 100, width: 100 }}
+                    color={mode === "light" ? 'secondary' : 'primary'}
+                />
             </Link>
             <NavbarLinks />
         </NavbarWrapper>
@@ -56,18 +59,22 @@ export const NavbarLinks: FC = () =>{
             {
                 mobileTablate 
                     ?(
-                        <Button variant="contained" size="small" sx={{ alignSelf: 'center'}} onClick={onClick} >
-                            {
-                                showMenu ?(
-                                    <CloseIcon />
-                                ): (
-                                    <MenuIcon />
-                                )
-                            }
-                        </Button>
+                        <Box sx={{alignSelf: 'center', display: 'flex', justifyContent: 'center', gap: 0.5}}>
+                            <Button variant="contained" size="small" sx={{ alignSelf: 'center'}} onClick={onClick} >
+                                {
+                                    showMenu ?(
+                                        <CloseIcon />
+                                    ): (
+                                        <MenuIcon />
+                                    )
+                                }
+                            </Button>
+                            <ThemeSwitch />
+                        </Box>
                     ): ( 
                         <NavbarLinksWrapper>  
                             <MapNavLinks />
+                            <ThemeSwitch />
                         </NavbarLinksWrapper>
                     )
             }

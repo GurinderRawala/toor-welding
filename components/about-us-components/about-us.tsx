@@ -1,36 +1,40 @@
-import { Typography } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { FC } from "react";
-import logo from "../../assests/ToorWeldingLogo-removebg.png";
-import Image from "next/image";
 import { ColumnWrapper, ResponsiveContainer } from "../common-styled";
 import { WeldingWrapperStyled as AboutUsWrapperStyled } from "../services-components";
-import { LOGO } from "../../constents";
 import { PhotoViewer } from "../photo-gallery";
+import { LogoIcon } from "../logo-icon";
 
-export const AboutUsComponent: FC = () =>(
-    <ResponsiveContainer>
-        <AboutUsWrapperStyled sx={{ gridTemplateColumns: "auto 30%", minHeight: 0 }}>
-            <ColumnWrapper sx={{justifyContent: "flex-start"}} data-aos="fade-up">
-                <Typography>{aboutUsComponentConfig.intro}</Typography>
-                <Typography>{aboutUsComponentConfig.introPart}</Typography>
+export const AboutUsComponent: FC = () =>{
+    const { palette: { mode } } = useTheme()
+    return(
+        <ResponsiveContainer>
+            <AboutUsWrapperStyled sx={{ gridTemplateColumns: "auto 30%", minHeight: 0 }}>
+                <ColumnWrapper sx={{justifyContent: "flex-start"}} data-aos="fade-up">
+                    <Typography>{aboutUsComponentConfig.intro}</Typography>
+                    <Typography>{aboutUsComponentConfig.introPart}</Typography>
+                </ColumnWrapper>
+                <ColumnWrapper sx={{justifyContent: "flex-start"}}>
+                    <LogoIcon 
+                        viewBox="0 0 510.000000 489.000000" 
+                        sx={{ height: 200, width: 200 }}
+                        color={mode === "light" ? 'secondary' : 'primary'}
+                    />
+                </ColumnWrapper>
+            </AboutUsWrapperStyled>
+            <Typography variant="h2" py={2} textAlign="center" color={(theme) => theme.palette.text.primary}>{aboutUsComponentConfig.jobs}</Typography>
+            <PhotoViewer />
+            <ColumnWrapper sx={{gap: 10}} mb={10} p={2}>
+                <Typography variant="h2" color={(theme) => theme.palette.text.primary}>{aboutUsComponentConfig.sectionOne.heading}</Typography>
+                <Typography color={(theme) => theme.palette.text.primary}>{aboutUsComponentConfig.sectionOne.body}</Typography>
             </ColumnWrapper>
-            <ColumnWrapper sx={{justifyContent: "flex-start"}}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={LOGO} alt="logo" height={150}/>
+            <ColumnWrapper sx={{gap: 10}} p={2} data-aos="fade-up">
+                <Typography variant="h2" color={(theme) => theme.palette.text.primary}>{aboutUsComponentConfig.sectionTwo.heading}</Typography>
+                <Typography color={(theme) => theme.palette.text.primary}>{aboutUsComponentConfig.sectionTwo.body}</Typography>
             </ColumnWrapper>
-        </AboutUsWrapperStyled>
-        <Typography variant="h2" py={2} textAlign="center">{aboutUsComponentConfig.jobs}</Typography>
-        <PhotoViewer />
-        <ColumnWrapper sx={{gap: 10}} mb={10} p={2}>
-            <Typography variant="h2">{aboutUsComponentConfig.sectionOne.heading}</Typography>
-            <Typography>{aboutUsComponentConfig.sectionOne.body}</Typography>
-        </ColumnWrapper>
-        <ColumnWrapper sx={{gap: 10}} p={2} data-aos="fade-up">
-            <Typography variant="h2">{aboutUsComponentConfig.sectionTwo.heading}</Typography>
-            <Typography>{aboutUsComponentConfig.sectionTwo.body}</Typography>
-        </ColumnWrapper>
-    </ResponsiveContainer>
-)
+        </ResponsiveContainer>
+    )
+}
 
 
 export const aboutUsComponentConfig = {

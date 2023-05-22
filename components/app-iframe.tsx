@@ -1,3 +1,4 @@
+import { useTheme } from "@mui/material";
 import { FC } from "react";
 
 export interface AppIframeProps{
@@ -6,10 +7,12 @@ export interface AppIframeProps{
 
 export const AppIframe: FC<AppIframeProps> = ({
     url
-}) =>(
-    <iframe src={url} style={{
-        height: 600,
-        border: "none",
-        width: "100%"
-    }}/>
-)
+}) =>{
+    return(
+        <iframe src={url} style={{
+            height: 600,
+            border: "none",
+            width: "100%",
+        }}/>
+    )
+}

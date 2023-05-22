@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled, Typography, useTheme } from "@mui/material";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
 import React, { FC } from "react";
@@ -7,16 +7,19 @@ import { AppIframe } from "./app-iframe";
 import { ColumnWrapper, ResponsiveContainer, RowWrapper } from "./common-styled";
 import { WeldingWrapperStyled as ContactUsWrapperStyled } from "./services-components";
 
-export const ContactUsComponent: FC = () =>(
-    <ResponsiveContainer>
-        <ContactUsWrapperStyled sx={{gridTemplateColumns: "60% 40%"}}>
-            <ColumnWrapper sx={{minHeight: 800}}>
-                <AppIframe url={CONTACT_US_FORM_URL}/>
-            </ColumnWrapper>
-            <ContactDetails />
-        </ContactUsWrapperStyled>
-    </ResponsiveContainer>
-)
+export const ContactUsComponent: FC = () =>{
+    const { palette: { mode } } = useTheme()
+    return(
+        <ResponsiveContainer>
+            <ContactUsWrapperStyled sx={{gridTemplateColumns: "60% 40%"}}>
+                <ColumnWrapper sx={{minHeight: 800}}>
+                    <AppIframe url={`${CONTACT_US_FORM_URL}&mode=${mode}`}/>
+                </ColumnWrapper>
+                <ContactDetails />
+            </ContactUsWrapperStyled>
+        </ResponsiveContainer>
+    )
+}
 
 
 export const ContactDetails: FC = () =>(

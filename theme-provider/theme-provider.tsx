@@ -1,37 +1,29 @@
 
-import { createTheme, GlobalStyles, GlobalStylesProps, ThemeProvider } from "@mui/material";
-import React, { FC } from "react";
+import { Box, createTheme, GlobalStyles, GlobalStylesProps, Palette, ThemeProvider } from "@mui/material";
+import React, { FC, PropsWithChildren } from "react";
+import { useThemeSwitch } from "./theme-switch";
 
-const theme = createTheme({
-    typography: {
-        fontFamily: "'PT Sans Caption', 'sans-serif'",
-    },
-    palette: {
-        background: {
-            default: "#fff5e6",
-            paper: "#fff"
+export function makeTheme(mode: Palette["mode"]){
+    return createTheme({
+        typography: {
+            fontFamily: "'Nunito', sans-serif",
         },
-        primary: {
-            main: "#AF524B"
+        palette: {
+            mode,
+            primary: {
+                main: "#AF524B"
+            },
+            secondary: {
+                main: "#333"
+            },
         },
-        secondary: {
-            main: "#333"
-        },
-        text:{
-            disabled: "#777",
-            primary: "#333",
-            secondary: "#FFF"
-        },
-    },
-});
-
-export interface AppThemeProviderProps{
-    children: JSX.Element
+    });
 }
+
 
 const globalStyles: GlobalStylesProps["styles"] = {
     html: {
-        fontFamily: "'PT Sans Caption', 'sans-serif'"
+        fontFamily: "'Nunito', sans-serif"
     },
     body: {
         boxSizing: "border-box",
@@ -40,9 +32,15 @@ const globalStyles: GlobalStylesProps["styles"] = {
     }
 }
 
-export const AppThemeProvider: FC<AppThemeProviderProps> = ({ children }) => (
-    <ThemeProvider theme={theme}>
-        <GlobalStyles styles={globalStyles} />
-        { children }
-    </ThemeProvider>
-)
+export const AppThemeProvider: FC<PropsWithChildren> = ({ children }) => {
+    const { mode } = useThemeSwitch()
+
+    return(
+        <ThemeProvider theme={makeTheme(mode)}>
+            <GlobalStyles styles={globalStyles} />
+            <Box sx={(theme) =>({backgroundColor: theme.palette.background.default})}>
+                {children}
+            </Box>
+        </ThemeProvider>
+    )
+}

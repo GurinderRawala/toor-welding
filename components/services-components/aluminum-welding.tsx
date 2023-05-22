@@ -1,48 +1,54 @@
-import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, Divider, List, ListItem, ListItemText, styled, Typography } from "@mui/material";
+import { Box, Card, CardActions, CardContent, CardHeader, CardMedia, ListItem, ListItemText, styled, Typography, useTheme } from "@mui/material";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import React, { FC } from "react";
 import { ColumnWrapper, RowWrapper, smallScreenFlex } from "../common-styled";
 import { CustomList } from "../custom-list";
-import { LOGO } from "../../constents";
+import { LogoIcon } from "../logo-icon";
 
-export const AluminumWelding: FC = () =>(
-    <WeldingWrapperStyled>
-        <Card data-aos="fade-up">
-            <CardHeader 
-                avatar={
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img src={LOGO} alt="logo" height={100}/>
-                }
-                title={<Typography variant="h4">{serviceCardConfig.title}</Typography>}
-            />
-            <CardMedia
-                component="img"
-                height="200"
-                image={serviceCardConfig.image}
-                alt="welding Image"
-            />
-            <CardContent>
-                <MapToAluminiumWelding />
-            </CardContent>
-            <CardActions>
-                <CardFooterStyled>
-                    <LocalPhoneIcon />
-                    <Box>{serviceCardConfig.phone}</Box>
-                </CardFooterStyled>
-            </CardActions>
-        </Card>
-        <WeldingContentStyled data-aos="fade-up">
-            <Typography variant="h2">{aluminumWeldingContentConfig.title}</Typography>
-            <Typography>{aluminumWeldingContentConfig.body.partOne}</Typography>
-            <Typography>{aluminumWeldingContentConfig.body.partTwo}</Typography>
+export const AluminumWelding: FC = () =>{
+    const { palette: { mode } } = useTheme()
+    return(
+        <WeldingWrapperStyled>
+            <Card>
+                <CardHeader 
+                    avatar={
+                        <LogoIcon 
+                            viewBox="0 0 510.000000 489.000000" 
+                            sx={{ height: 100, width: 100 }}
+                            color={mode === "light" ? 'secondary' : 'primary'}
+                        />
+                    }
+                    title={<Typography variant="h4">{serviceCardConfig.title}</Typography>}
+                />
+                <CardMedia
+                    component="img"
+                    height="200"
+                    image={serviceCardConfig.image}
+                    alt="welding Image"
+                />
+                <CardContent>
+                    <MapToAluminiumWelding />
+                </CardContent>
+                <CardActions>
+                    <CardFooterStyled>
+                        <LocalPhoneIcon />
+                        <Box>{serviceCardConfig.phone}</Box>
+                    </CardFooterStyled>
+                </CardActions>
+            </Card>
+            <WeldingContentStyled data-aos="fade-up">
+                <Typography variant="h2">{aluminumWeldingContentConfig.title}</Typography>
+                <Typography>{aluminumWeldingContentConfig.body.partOne}</Typography>
+                <Typography>{aluminumWeldingContentConfig.body.partTwo}</Typography>
 
-            <OtherMaterialsStyled>
-                <CustomList data={weldingMaterialContentConfig.listOne}/>
-                <CustomList data={weldingMaterialContentConfig.listTwo}/>
-            </OtherMaterialsStyled>
-        </WeldingContentStyled>
-    </WeldingWrapperStyled>
-)
+                <OtherMaterialsStyled>
+                    <CustomList data={weldingMaterialContentConfig.listOne}/>
+                    <CustomList data={weldingMaterialContentConfig.listTwo}/>
+                </OtherMaterialsStyled>
+            </WeldingContentStyled>
+        </WeldingWrapperStyled>
+    )
+}
 
 export const MapToAluminiumWelding: FC = () =>(
     <>
@@ -65,6 +71,7 @@ export const WeldingWrapperStyled = styled(Box)(
             gridTemplateColumns: '30% 1fr',
             padding: theme.spacing(2),
             minHeight: 500,
+            color: theme.palette.text.primary,
             [theme.breakpoints.down("md")]: {
                 ...smallScreenFlex
             }
@@ -92,8 +99,8 @@ export const CardFooterStyled = styled(RowWrapper)(({theme}) =>({
     gap: 10,
     alignItems: 'center',
     padding: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.text.secondary,
+    backgroundColor: theme.palette.grey[900],
+    color: theme.palette.grey[200],
     width: "100%"
 }));
 

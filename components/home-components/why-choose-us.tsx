@@ -15,8 +15,9 @@ export const WhyChooseUsStyled = styled(ColumnWrapper)(
             backgroundColor: theme.palette.secondary.main,
             padding: theme.spacing(2),
             minHeight: 550,
-            justifyContent: "space-evenly",
-            color: theme.palette.text.secondary
+            justifyContent: "center",
+            gap: 50,
+            color: theme.palette.grey[300]
         }
     )
 )

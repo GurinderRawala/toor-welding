@@ -35,6 +35,7 @@ export const WhatWeOfferStyled = styled(ColumnWrapper)(
             justifyContent: "space-evenly",
             padding: theme.spacing(2),
             minHeight: 700,
+            color: theme.palette.text.primary,
             '& > .__servicesGrid': {
                 display: "grid",
                 gridTemplateColumns: "25% 25% 25% 25%",

@@ -41,5 +41,5 @@ export const trailerRoofRepairConfig: TrailerRepairConfig = {
         "Panel Repair",
         "Panel Welding"
     ],
-    image: `https://ryder.com/used-trucks/-/media/project/usedtrucks/uvs/images/vehicles/types/truck-types---trailers/truck_types_dry_trailer_image.jpg?h=468&iar=0&w=624&hash=52E64E750AF48F5CC51C32A2A31C7F91`
+    image: `https://toorwelding.com/gallery-image/2.jpeg`
 }

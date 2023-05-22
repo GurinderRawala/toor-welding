@@ -7,7 +7,7 @@ import { OtherMaterialsStyled, WeldingContentStyled, WeldingWrapperStyled } from
 
 export const TrailerRepair: FC = () =>(
     <WeldingWrapperStyled sx={{ gridTemplateColumns: "auto 30%" }}>
-        <WeldingContentStyled data-aos="fade-up">
+        <WeldingContentStyled>
             <Typography variant="h2">{trailerRepairConfig.title}</Typography>
             <Typography>{trailerRepairConfig.body}</Typography>
             <OtherMaterialsStyled>
@@ -16,7 +16,7 @@ export const TrailerRepair: FC = () =>(
             </OtherMaterialsStyled>
         </WeldingContentStyled>
         <ColumnWrapper>
-            <ResponsiveImage src={trailerRepairConfig.image}/>
+            <ResponsiveImage src={trailerRepairConfig.image} style={{maxHeight: 350}}/>
         </ColumnWrapper>
     </WeldingWrapperStyled>
 )

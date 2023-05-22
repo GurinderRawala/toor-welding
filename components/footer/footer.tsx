@@ -1,26 +1,30 @@
-import Image from "next/image";
 import React,{ FC } from "react";
 import { CopyRightContainer, FooterWrapper, InnerWrapper } from "./styled";
-import logo from "../../assests/ToorWeldingLogo-removebg.png";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { footerConfig } from "./footer-config";
 import { MapNavLinks } from "../navbar";
 import { Theme } from "@mui/system";
-import { LOGO } from "../../constents";
+import { LogoIcon } from "../logo-icon";
 
-export const Footer: FC = () =>(
-    <>
-        <FooterWrapper>
-            <InnerWrapper>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={LOGO} alt="footer-logo" height={200}/>
-            </InnerWrapper>
-            <AddressCard />
-            <LinksCard />
-        </FooterWrapper>
-        <CopyRightContainer>Copyright &copy;{new Date().getFullYear()} Toor Welding. All rights reserved</CopyRightContainer>
-    </>
-)
+export const Footer: FC = () =>{
+    const { palette: { mode } } = useTheme()
+    return(
+        <>
+            <FooterWrapper>
+                <InnerWrapper>
+                    <LogoIcon 
+                        viewBox="0 0 510.000000 489.000000" 
+                        sx={{ height: 200, width: 300 }}
+                        color={mode === "light" ? 'secondary' : 'primary'}
+                    />
+                </InnerWrapper>
+                <AddressCard />
+                <LinksCard />
+            </FooterWrapper>
+            <CopyRightContainer>Copyright &copy;{new Date().getFullYear()} Toor Welding. All rights reserved</CopyRightContainer>
+        </>
+    )
+}
 
 
 export const AddressCard: FC = () =>(
@@ -35,6 +39,6 @@ export const AddressCard: FC = () =>(
 
 export const LinksCard: FC = () =>(
     <InnerWrapper sx={{gap: 2}}>
-        <MapNavLinks styles={{ color: (theme: Theme) => theme.palette.secondary.main }}/>
+        <MapNavLinks styles={{ color: (theme: Theme) => theme.palette.text.primary }}/>
     </InnerWrapper>
 )
