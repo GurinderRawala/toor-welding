@@ -1,3 +1,3 @@
-export * from "./footer";
-export * from "./footer-config";
-export * from "./styled";
+export * from './footer'
+export * from './footer-config'
+export * from './styled'
