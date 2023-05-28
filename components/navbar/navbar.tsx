@@ -9,6 +9,7 @@ import Link from "next/link";
 import { SxProps, Theme } from '@mui/system';
 import { ThemeSwitch } from '../theme-switch';
 import { LogoIcon } from '../logo-icon';
+import { useCloseMenuOnRouteChange } from './hook';
 
 export const Navbar: FC = () =>{
     const { palette: { mode } } = useTheme()
@@ -49,6 +50,7 @@ export const NavbarLinks: FC = () =>{
     const theme = useTheme();
     const mobileTablate = useMediaQuery(theme.breakpoints.down('md'));
     const [showMenu, setShowMenu] = useState<boolean>(false);
+    useCloseMenuOnRouteChange(setShowMenu)
 
     const onClick = () =>{
         setShowMenu(!showMenu);

@@ -1,5 +1,5 @@
 
-import { Box, createTheme, GlobalStyles, GlobalStylesProps, Palette, ThemeProvider } from "@mui/material";
+import { Box, createTheme, CssBaseline, GlobalStyles, GlobalStylesProps, Palette, ThemeProvider } from "@mui/material";
 import React, { FC, PropsWithChildren } from "react";
 import { useThemeSwitch } from "./theme-switch";
 
@@ -38,9 +38,8 @@ export const AppThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     return(
         <ThemeProvider theme={makeTheme(mode)}>
             <GlobalStyles styles={globalStyles} />
-            <Box sx={(theme) =>({backgroundColor: theme.palette.background.default})}>
-                {children}
-            </Box>
+            <CssBaseline />
+            {children}
         </ThemeProvider>
     )
 }
