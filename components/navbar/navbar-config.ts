@@ -1,3 +1,6 @@
+export const changeRouteWithENV = (route: string) =>
+  process.env.NODE_ENV === 'development' ? route : `${route}.html`
+
 export interface NavbarConfig {
   name: string
   route: string
@@ -5,18 +8,18 @@ export interface NavbarConfig {
 export const navbarConfig: NavbarConfig[] = [
   {
     name: 'Services',
-    route: '/services',
+    route: changeRouteWithENV('/services'),
   },
   {
     name: 'About Us',
-    route: '/about-us',
+    route: changeRouteWithENV('/about-us'),
   },
   {
     name: 'Contact Us',
-    route: '/contact-us',
+    route: changeRouteWithENV('/contact-us'),
   },
   {
     name: 'Get a Quote',
-    route: '/get-quote',
+    route: changeRouteWithENV('/get-quote'),
   },
 ]
